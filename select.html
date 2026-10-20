@@ -23,6 +23,82 @@
         background: rgba(0, 242, 255, 0.45);
         box-shadow: 0 0 10px rgba(0, 242, 255, 0.25);
       }
+
+      #games #random-game {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: min(220px, calc(100vw - 48px));
+        min-height: 54px;
+        padding: 0.85rem 1.4rem;
+        border: 1px solid rgba(0, 242, 255, 0.48);
+        border-radius: 999px;
+        background: linear-gradient(135deg, #064765, #001330);
+        color: #b1e8fc;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, filter 180ms ease;
+      }
+
+      #games #random-game:hover {
+        transform: translateY(-3px) scale(1.03);
+        border-color: rgba(0, 242, 255, 0.9);
+        box-shadow: 0 12px 28px rgba(0, 242, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+        filter: brightness(1.08);
+      }
+
+      #games #random-game:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.28), inset 0 2px 7px rgba(0, 0, 0, 0.24);
+        filter: brightness(0.98);
+      }
+
+      #games #random-game:focus-visible {
+        outline: 3px solid currentColor;
+        outline-offset: 4px;
+      }
+
+      body[data-theme="fall"] #games #random-game {
+        border-color: rgba(240, 136, 42, 0.58);
+        background: linear-gradient(135deg, #3a1c07, #140a03);
+        color: #ffa14d;
+      }
+
+      body[data-theme="fall"] #games #random-game:hover {
+        border-color: #ffc37e;
+        box-shadow: 0 12px 28px rgba(240, 136, 42, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      }
+
+      body[data-theme="light"] #games #random-game {
+        border-color: rgba(4, 112, 143, 0.35);
+        background: linear-gradient(135deg, #ffffff, #e8f4f8);
+        color: #111111;
+      }
+
+      body[data-theme="light"] #games #random-game:hover {
+        border-color: rgba(4, 112, 143, 0.7);
+        box-shadow: 0 12px 28px rgba(4, 112, 143, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      }
+
+      body[data-theme="primordial"] #games #random-game {
+        border-color: rgba(255, 255, 255, 0.38);
+        background: linear-gradient(135deg, #1a1a1a, #050505);
+        color: #ffffff;
+      }
+
+      body[data-theme="primordial"] #games #random-game:hover {
+        border-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 12px 28px rgba(255, 255, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #games #random-game {
+          transition: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -65,8 +141,8 @@
         </div>
         <button class="button" id="request" onclick="window.open('https://forms.gle/d8hBcyNGbLXk7cEk9', '_blank')">Game Request Form</button>
         <br>
-        <button class="button" id="random-game" onclick="randomGame()">
-          <img src="media/random.png" alt="Random Game" style="width:130px;height:130px;">
+        <button class="button" id="random-game" type="button" onclick="randomGame()" title="Pick a random game">
+          Random Game
         </button>
         <div id="games" style="margin-top:1rem;">
           <div id="recent" style="display:none;">

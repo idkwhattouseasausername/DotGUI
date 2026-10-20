@@ -24,7 +24,8 @@
         box-shadow: 0 0 10px rgba(0, 242, 255, 0.25);
       }
 
-      #games #random-game {
+      #games #random-game,
+      #games #request {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -43,59 +44,69 @@
         transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, filter 180ms ease;
       }
 
-      #games #random-game:hover {
+      #games #random-game:hover,
+      #games #request:hover {
         transform: translateY(-3px) scale(1.03);
         border-color: rgba(0, 242, 255, 0.9);
         box-shadow: 0 12px 28px rgba(0, 242, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.16);
         filter: brightness(1.08);
       }
 
-      #games #random-game:active {
+      #games #random-game:active,
+      #games #request:active {
         transform: translateY(1px) scale(0.98);
         box-shadow: 0 3px 9px rgba(0, 0, 0, 0.28), inset 0 2px 7px rgba(0, 0, 0, 0.24);
         filter: brightness(0.98);
       }
 
-      #games #random-game:focus-visible {
+      #games #random-game:focus-visible,
+      #games #request:focus-visible {
         outline: 3px solid currentColor;
         outline-offset: 4px;
       }
 
-      body[data-theme="fall"] #games #random-game {
+      body[data-theme="fall"] #games #random-game,
+      body[data-theme="fall"] #games #request {
         border-color: rgba(240, 136, 42, 0.58);
         background: linear-gradient(135deg, #3a1c07, #140a03);
         color: #ffa14d;
       }
 
-      body[data-theme="fall"] #games #random-game:hover {
+      body[data-theme="fall"] #games #random-game:hover,
+      body[data-theme="fall"] #games #request:hover {
         border-color: #ffc37e;
         box-shadow: 0 12px 28px rgba(240, 136, 42, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.12);
       }
 
-      body[data-theme="light"] #games #random-game {
+      body[data-theme="light"] #games #random-game,
+      body[data-theme="light"] #games #request {
         border-color: rgba(4, 112, 143, 0.35);
         background: linear-gradient(135deg, #ffffff, #e8f4f8);
         color: #111111;
       }
 
-      body[data-theme="light"] #games #random-game:hover {
+      body[data-theme="light"] #games #random-game:hover,
+      body[data-theme="light"] #games #request:hover {
         border-color: rgba(4, 112, 143, 0.7);
         box-shadow: 0 12px 28px rgba(4, 112, 143, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
       }
 
-      body[data-theme="primordial"] #games #random-game {
+      body[data-theme="primordial"] #games #random-game,
+      body[data-theme="primordial"] #games #request {
         border-color: rgba(255, 255, 255, 0.38);
         background: linear-gradient(135deg, #1a1a1a, #050505);
         color: #ffffff;
       }
 
-      body[data-theme="primordial"] #games #random-game:hover {
+      body[data-theme="primordial"] #games #random-game:hover,
+      body[data-theme="primordial"] #games #request:hover {
         border-color: rgba(255, 255, 255, 0.8);
         box-shadow: 0 12px 28px rgba(255, 255, 255, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.12);
       }
 
       @media (prefers-reduced-motion: reduce) {
-        #games #random-game {
+        #games #random-game,
+        #games #request {
           transition: none;
         }
       }
@@ -139,7 +150,7 @@
         <div id="no-results-message" style="display:none; text-align:center; font-family: Ubuntu, sans-serif; color: #099eda; font-size: 1.2em; margin-top: 30px; background: rgba(0,0,0,0.7); border-radius: 12px; padding: 18px 24px; box-shadow: 0 2px 16px #00ffff33;">
           No results found. Please use the game suggestion form below. 👇
         </div>
-        <button class="button" id="request" onclick="window.open('https://forms.gle/d8hBcyNGbLXk7cEk9', '_blank')">Game Request Form</button>
+        <button class="button" id="request" type="button" onclick="window.open('https://forms.gle/d8hBcyNGbLXk7cEk9', '_blank')" title="Suggest a game">Game Request Form</button>
         <br>
         <button class="button" id="random-game" type="button" onclick="randomGame()" title="Pick a random game">
           Random Game
